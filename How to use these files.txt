@@ -1,0 +1,9 @@
+How to use these files
+
+Either use this Folder as a completely new Project (like the one in the NodeJS Installation Lecture) or just pick the files you want to replace in your own Project.
+
+The most important Files/Folders (i.e. Files/Folders that changed) are the following:
+/models/
+/routes/app.js
+app.js
+/views/node.hbs

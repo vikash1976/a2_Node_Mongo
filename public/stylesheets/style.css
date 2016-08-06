@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  color: #00B7FF;
+  text-decoration: underline;
+}
+
+a.danger {
+  color: red;
+}
+
+.spacing {
+  margin-bottom: 20px;
+}
+
+.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.high-priority {
+  background: lightskyblue;
+ 
+}
+
+.normal-priority {
+  background: lawngreen;
+ 
+}
+.activity-box {
+  height: 230px;
+  overflow: auto;
+}
