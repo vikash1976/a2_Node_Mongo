@@ -26,11 +26,13 @@
     "zone.js": "0.6.8"
   },
   "devDependencies": {
+    "concurrently": "^1.0.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.10.0",
     "gulp-uglify": "^1.5.1",
-    "concurrently": "^1.0.0"
+    "systemjs-builder": "^0.15.30"
   }
 }

@@ -1,9 +1,21 @@
 //Push Strategy
 import {Component,ChangeDetectionStrategy} from 'angular2/core';
 import {MasterComponent} from './master.comment';
+
 @Component({
-    moduleId: __moduleName,
-    templateUrl: 'child.component.html',
+    //moduleId: module.id,
+    template: `
+    <div style="border: 1px solid black;padding: 5px;">
+        <div class="alert alert-success">
+            {{message}}
+        </div>
+        <div><strong>{{lastUpdated()}}</strong></div>
+        <div>
+            <button class="btn btn-primary" (click)="updateMe()">Update Me</button>
+        </div>
+        
+    </div>
+`,
     selector:'child-section-1',
     changeDetection:ChangeDetectionStrategy.OnPush
 })
@@ -17,8 +29,19 @@ export class ChildComponentSection1 extends MasterComponent{
 
 
 @Component({
-    moduleId: __moduleName,
-    templateUrl: 'child.component.html',
+    //moduleId: __moduleName,
+    template: `
+    <div style="border: 1px solid black;padding: 5px;">
+        <div class="alert alert-success">
+            {{message}}
+        </div>
+        <div><strong>{{lastUpdated()}}</strong></div>
+        <div>
+            <button class="btn btn-primary" (click)="updateMe()">Update Me</button>
+        </div>
+        
+    </div>
+`,
     selector:'child-section-2',
     changeDetection:ChangeDetectionStrategy.Default
 })

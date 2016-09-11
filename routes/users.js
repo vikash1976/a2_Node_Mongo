@@ -16,7 +16,7 @@ router.post('/', function(req, res, next) {
         if(err) {
            return res.status(404).json({
                 title: "An error occured",
-                error: err
+                error: {message: "EmailId already in taken"}
             });
         }
         res.status(201).json({
@@ -36,13 +36,13 @@ router.post('/signin', function(req, res, next){
         if(!doc) {
             return res.status(404).json({
                 title: "No user found",
-                error: {mrssage: 'User could not be found'}
+                error: {message: 'User could not be found'}
             });
         }
         if(! PasswordHash.verify(req.body.password, doc.password)){
             return res.status(404).json({
                 title: "Could not sign you in",
-                error: {mrssage: 'Invalid credentials'}
+                error: {message: 'Invalid credentials'}
             });
         }
         var token = jwt.sign({user: doc}, encKey, {expiresIn: 7200});

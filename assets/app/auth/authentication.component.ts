@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {SignupComponent} from './signup.component';
 import {SigninComponent} from './signin.component';
 import {AuthService} from './auth.service';
+import {ErrorComponent} from '../errors/error.component';
 
 import {LogoutComponent} from './logout.component';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
@@ -20,8 +21,9 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
         <div class="row spacing">
             <router-outlet></router-outlet>
         </div>
+        <my-error></my-error>
     `,
-    directives: [SignupComponent, SigninComponent, LogoutComponent, ROUTER_DIRECTIVES],
+    directives: [SignupComponent, SigninComponent, LogoutComponent, ROUTER_DIRECTIVES, ErrorComponent],
     styles: [`
          .router-link-active {
             color: #555;

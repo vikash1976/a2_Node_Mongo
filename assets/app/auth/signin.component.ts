@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {AuthService} from './auth.service';
 import {User} from './user';
 import {Router} from 'angular2/router';
+import {ErrorService} from '../errors/error.service';
 
 @Component({
     selector: 'my-signin',
@@ -25,7 +26,7 @@ import {Router} from 'angular2/router';
 })
 export class SigninComponent {
     
-    constructor(private _authService: AuthService, private _router: Router) {}
+    constructor(private _authService: AuthService , private _errorService: ErrorService, private _router: Router) {}
     onSubmit(myForm:any) {
         const user = new User(myForm.email, myForm.password);
         this._authService.signin(user)
@@ -35,7 +36,7 @@ export class SigninComponent {
             this._router.navigateByUrl('/');
             
         },
-        error => console.error(error)
+        error => this._errorService.handleError(error)
      );
         
     }

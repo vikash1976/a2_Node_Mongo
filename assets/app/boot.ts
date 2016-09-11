@@ -7,6 +7,7 @@ import {ActivityService} from './worklist/worklist.service';
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2/router";
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {provide} from "angular2/core";
+import {ErrorService} from "./errors/error.service";
 
-bootstrap(AppComponent, [ActivityService, AuthService, MessageService, HTTP_PROVIDERS, ROUTER_PROVIDERS, 
+bootstrap(AppComponent, [ActivityService, AuthService, ErrorService, MessageService, HTTP_PROVIDERS, ROUTER_PROVIDERS, 
 provide(LocationStrategy, {useClass: HashLocationStrategy})]);

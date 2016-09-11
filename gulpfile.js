@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-
+var del = require('del');
 var appDev = 'assets/app/';
 var appProd = 'public/js/app/';
 
@@ -26,5 +26,8 @@ gulp.task('build-ts', function () {
 gulp.task('watch', function () {
     gulp.watch(appDev + '**/*.ts', ['build-ts']);
 });
+gulp.task('clean', function() {
+    del(appProd + '/**/*');
+})
 
 gulp.task('default', ['watch', 'build-ts']);

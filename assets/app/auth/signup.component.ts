@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {FormBuilder, ControlGroup, Validators, Control} from 'angular2/common';
 import {AuthService} from './auth.service';
+import {ErrorService} from '../errors/error.service';
 import {User} from './user';
 
 @Component({
@@ -33,7 +34,7 @@ import {User} from './user';
 export class SignupComponent implements OnInit{
     myForm: ControlGroup;
     
-    constructor(private _fb: FormBuilder, private _authService: AuthService) {}
+    constructor(private _fb: FormBuilder, private _authService: AuthService, private _errorService: ErrorService) {}
     ngOnInit(){
         this.myForm = this._fb.group(
             {
@@ -57,7 +58,7 @@ export class SignupComponent implements OnInit{
                         console.log(data);
                         //this._messageService.messages.push(data);
                     },
-                    error => console.error(error)
+                    error => this._errorService.handleError(error)
                 );
     }
     private isEmail(control: Control) : {[s: string]: boolean} {
